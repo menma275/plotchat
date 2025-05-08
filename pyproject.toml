@@ -1,0 +1,21 @@
+[project]
+name = "plotchat"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "menma275",email = "ohsusie9@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11, <4.0"
+dependencies = [
+    "pysvg-py3 (>=0.2.2.post3,<0.3.0)",
+    "ollama (>=0.4.8,<0.5.0)"
+]
+
+[tool.poetry]
+packages = [{include = "plotchat", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
