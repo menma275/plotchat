@@ -4,7 +4,7 @@ this sytem requires ollama, inkscape, axicli
 
 - install
   - brew install inkscape
-- create path
+- set the path
   - sudo ln -s /Applications/Inkscape.app/Contents/MacOS/inkscape /usr/local/bin/inkscape
 
 ### ollama
