@@ -25,12 +25,13 @@ max_text_width = width - offsetX *2
 char_width = font_size / 1.85
 max_chars_per_line = int(max_text_width / char_width)
 
-user_input = input("Type anyting:")
+user_input = input("Type anything:")
 
 # model = "phi4"
 model = "deepseek-r1:14b"
 response: ChatResponse = chat(model=model, messages=[
-    {"role": "system", "content": "You are an AI assistant who speak Japanese, please answer any question in Japanese."},
+    {"role": "system", "content": "You are an AI assistant who speak English, please answer any question in English. please make sure that you are not allowed to use special character like emoji."},
+    # {"role": "system", "content": "You are an AI assistant who speak Japanese, please answer any question in Japanese."},
     {"role": "user", "content": user_input},
 ])
 
@@ -69,7 +70,9 @@ svg.save("test.svg", encoding='utf-8')
 text_to_path = [
     'inkscape',
     'test.svg',
-    '--actions=select-all;object-to-path;export-filename:output.svg;export-do;'
+    # '--actions=select-all;object-to-path;export-filename:output.svg;export-do;'
+    # '--actions=select-all;object-to-path;combine;union;export-filename:output.svg;export-do;'
+    '--actions=select-all;Extensions:AxiDraw Utilities/Hershey Text...;export-filename:output.svg;export-do;'
 ]
 result = subprocess.run(text_to_path, capture_output=True, text=True)
 
