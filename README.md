@@ -1,4 +1,4 @@
-this sytem requires ollama, inkscape, axicli
+this sytem requires following tools:
 
 ### inkscape
 
@@ -16,3 +16,9 @@ this sytem requires ollama, inkscape, axicli
 
 - install
   - https://axidraw.com/doc/cli_api/#introduction
+
+### tesseract
+
+- install
+  - brew install tesseract
+  - brew install tesseract-lang
