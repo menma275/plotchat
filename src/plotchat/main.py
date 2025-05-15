@@ -9,25 +9,26 @@ from plotchat.img2base64 import imgBase64
 import subprocess
 
 async def main():
-    lang = "Japanese"
+    lang = "English"
+    # lang = "Japanese"
     txt = "txt.svg"
     output = "output.svg"
 
-# Capture and OCR
+    # Capture and OCR
     img = capture()
     img_base64 = await imgBase64(img)
     user_input = await ocrAi(img_base64, lang)
-# user_input = ocr(img)
+    # user_input = ocr(img)
 
-# Receive text and Generate response
-# user_input = input("Type anything: ")
+    # Receive text and Generate response
+    # user_input = input("Type anything: ")
     res = aiResponse(user_input, lang)
 
-# Create svg from generated text
+    # Create svg from generated text
     svg = shapedText(res)
     svg.save(txt, encoding='utf-8')
 
-# Covert text element into path
+    # Covert text element into path
     text_to_path = [
         'inkscape',
         f'{txt}',
@@ -37,7 +38,7 @@ async def main():
     ]
     result = subprocess.run(text_to_path, capture_output=True, text=True)
 
-# Plot final result
+    # Plot final result
     plot_text = [
         'axicli',
         f'{output}',

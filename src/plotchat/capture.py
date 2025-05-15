@@ -9,9 +9,6 @@ def capture():
 
     ret, frame = cap.read()
 
-    if ret:
-        cv2.imwrite('capture.jpg', frame)
-
     cap.release()
 
     return frame
