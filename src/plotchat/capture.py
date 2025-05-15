@@ -1,7 +1,7 @@
 import cv2
 
 def capture():
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 
     if not cap.isOpened():
         print('Camera open failed')
@@ -11,10 +11,9 @@ def capture():
 
     if ret:
         cv2.imwrite('capture.jpg', frame)
-        print('capture saved')
 
     cap.release()
 
     return frame
 
-capture()
+# capture()
