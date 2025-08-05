@@ -1,52 +1,35 @@
 # PlotChat
 
-PlotChat is a system that captures text from an image, uses an AI to generate a response, and then plots the response using a pen plotter.
+**Chat with AI, using real pen and paper.**
 
-## Features
+PlotChat brings a uniquely tangible experience to AI interaction. Write a note by hand, and the system captures it, lets an AI formulate a response, and then physically writes it back to you with a pen plotter.
 
-- Captures images from a local webcam or an ESP32-CAM.
-- Performs OCR on the captured image to extract text.
-- Uses a local AI (Ollama) to generate a response to the extracted text.
-- Converts the AI's response into an SVG file.
-- Plots the generated SVG file using the AxiDraw pen plotter.
+It's a conversation that blends the warmth of analog handwriting with the power of artificial intelligence.
+
+## How It Works
+
+1.  **Capture:** The system captures an image of your handwritten note using a webcam or an ESP32-CAM.
+2.  **OCR:** The image is processed using Optical Character Recognition (OCR) to extract the text.
+3.  **AI Response:** The extracted text is sent to a local AI (Ollama) to generate a thoughtful response.
+4.  **SVG Conversion:** The AI's response is converted into an SVG (Scalable Vector Graphics) file, essentially creating a digital version of the handwriting.
+5.  **Plotting:** The generated SVG file is then meticulously plotted onto paper using an AxiDraw pen plotter, bringing the AI's response to life.
+
+To start the process, simply run the main script:
+
+```bash
+poetry run python src/plotchat/main.py
+```
 
 ## Requirements
 
 This system requires the following tools:
 
-### inkscape
-
-- install
-  - brew install inkscape
-- set the path
-  - sudo ln -s /Applications/Inkscape.app/Contents/MacOS/inkscape /usr/local/bin/inkscape
-
-### ollama
-
-- install
-  - brew install ollama
-
-### axicli
-
-- install
-  - https://axidraw.com/doc/cli_api/#introduction
-
-### tesseract
-
-- install
-  - brew install tesseract
-  - brew install tesseract-lang
-
-## Usage
-
-1. **Run the main script:**
-   ```bash
-   poetry run python src/plotchat/main.py
-   ```
-
-2. **How it works:**
-   - The script captures an image.
-   - It sends the image to an AI for OCR.
-   - The recognized text is sent to another AI to get a response.
-   - The response is converted to an SVG file (`output.svg`).
-   - The SVG file is then plotted.
+- **Inkscape:** For processing SVG files.
+  - Installation: `brew install inkscape`
+  - Path setup: `sudo ln -s /Applications/Inkscape.app/Contents/MacOS/inkscape /usr/local/bin/inkscape`
+- **Ollama:** For running the local AI.
+  - Installation: `brew install ollama`
+- **AxiDraw CLI:** For controlling the pen plotter.
+  - Installation: See the [official documentation](https://axidraw.com/doc/cli_api/#introduction).
+- **Tesseract:** For OCR.
+  - Installation: `brew install tesseract` and `brew install tesseract-lang`
