@@ -2,20 +2,20 @@
 import asyncio
 from plotchat.ai import aiResponse
 from plotchat.svg import shapedText
-from plotchat.capture import capture, captureESP32
+from plotchat.capture import captureWhenHandDisappears
 from plotchat.ocr_ai import ocrAi
 from plotchat.img2base64 import imgBase64
 import subprocess
 
 
 async def main():
-    lang = "English"
-    # lang = "Japanese"
+    # lang = "English"
+    lang = "Japanese"
     txt = "txt.svg"
     output = "output.svg"
 
     # Capture and OCR
-    img = captureESP32()
+    img = captureWhenHandDisappears()
     # img = capture()
     img_base64 = await imgBase64(img)
     user_input = await ocrAi(img_base64, lang)
