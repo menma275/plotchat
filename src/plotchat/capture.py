@@ -18,7 +18,7 @@ def capture():
 
 
 def captureESP32():
-    url = "http://192.168.10.10/capture"
+    url = "http://192.168.10.200/capture"
     response = requests.get(url)
 
     if response.status_code != 200:
