@@ -5,11 +5,11 @@ from ollama import ChatResponse
 
 # AI part ---
 async def ocrAi(img_base64, lang):
-    print("Received your message 📮")
+    print("📮 Received your message")
 
     model = "gemma3"
 
-    print("Reading... 👀")
+    print("👀 Reading...")
     response: ChatResponse = chat(
         model=model,
         messages=[

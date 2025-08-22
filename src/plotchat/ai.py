@@ -11,11 +11,11 @@ def remove_think_tags(text: str) -> str:
 
 # AI part ---
 def aiResponse(user_input, lang):
-    print("Received user's input ✅")
+    print("✅ Received user's input")
     model = "gemma3"
     max_chars_per_res = 50
 
-    print("Start thinking 🧐")
+    print("🧐 Start thinking")
     response: ChatResponse = chat(
         model=model,
         messages=[
