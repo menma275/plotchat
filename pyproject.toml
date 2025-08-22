@@ -2,25 +2,23 @@
 name = "plotchat"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "menma275",email = "ohsusie9@gmail.com"}
-]
+authors = [{ name = "menma275", email = "ohsusie9@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.11, <4.0"
+requires-python = ">=3.11, <3.12"
 dependencies = [
-    "pysvg-py3 (>=0.2.2.post3,<0.3.0)",
-    "ollama (>=0.4.8,<0.5.0)",
-    "pyocr (>=0.8.5,<0.9.0)",
-    "easyocr (>=1.7.2,<2.0.0)",
-    "opencv-python (>=4.11.0.86,<5.0.0.0)",
-    "asyncio (>=3.4.3,<4.0.0)",
-    "python-dotenv (>=1.1.1,<2.0.0)",
-    "requests (>=2.32.4,<3.0.0)",
-    "mediapipe (>=0.10.21,<0.11.0)"
+  "pysvg-py3 (>=0.2.2.post3,<0.3.0)",
+  "ollama (>=0.4.8,<0.5.0)",
+  "pyocr (>=0.8.5,<0.9.0)",
+  "easyocr (>=1.7.2,<2.0.0)",
+  "opencv-python (>=4.11.0.86,<5.0.0.0)",
+  "asyncio (>=3.4.3,<4.0.0)",
+  "python-dotenv (>=1.1.1,<2.0.0)",
+  "requests (>=2.32.4,<3.0.0)",
+  "mediapipe (>=0.10.21,<0.11.0)",
 ]
 
 [tool.poetry]
-packages = [{include = "plotchat", from = "src"}]
+packages = [{ include = "plotchat", from = "src" }]
 
 
 [build-system]
